@@ -5,7 +5,28 @@ when javascript is disabled.
 
 ## How to use this control ##
 
+## Instalation ##
+
+Prefered way to intall is by [Composer](http://getcomposer.org)
+
+	composer require foowie/dependentselectbox:@dev
+
+Or by manualy adding into the [composer.json](https://getcomposer.org/doc/04-schema.md#json-schema)
+
+	{
+		"require":{
+			"foowie/dependentselectbox": "@dev"
+		}
+	}
+
 ### Registration: ###
+```neon
+	common:
+		extensions:
+			dependentSelectbox: DependentSelectBox\DI\DependentSelectboxExtension
+			jsonDependentSelectBox: DependentSelectBox\DI\JsonDependentSelectboxExtension
+```
+ or manually paste following code into the `bootstrap.php` file.
 ```php
 \DependentSelectBox\DependentSelectBox::register(); // First parameter of this method denotes name of method to add selectbox into form. Default name is addDependentSelectBox, but short name like addDSelect can be used.
 \DependentSelectBox\JsonDependentSelectBox::register();
